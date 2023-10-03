@@ -11,6 +11,5 @@ interface UserBase {
 const user: UserBase = {
   name: "John Doe",
   age: 30,
-  lastUpdated: new Date()
+  lastUpdated: new Date(),
 };
-

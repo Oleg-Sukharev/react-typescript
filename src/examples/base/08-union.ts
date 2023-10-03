@@ -1,22 +1,20 @@
-type Status = 'ok' | 'loading' | 'error';
+type Status = "ok" | "loading" | "error";
 
-const staticX: Status = 'loading';
+const staticX: Status = "loading";
 
-const arr: (number | string)[] = []
+const arr: (number | string)[] = [];
 
 function printId(id: number | string): void {
   // narrowing types
-  if (typeof id === 'string')
-    console.log(id.toUpperCase())
-  else
-    console.log(id)
+  if (typeof id === "string") console.log(id.toUpperCase());
+  else console.log(id);
 }
 
 function welcome(person: [string, string] | string): void {
   // narrowing types
   if (Array.isArray(person)) {
-    console.log('Hello', person.join(' '))
+    console.log("Hello", person.join(" "));
   } else {
-    console.log('Hello', person);
+    console.log("Hello", person);
   }
 }
