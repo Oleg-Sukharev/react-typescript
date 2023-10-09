@@ -6,8 +6,8 @@ function head(value: Date[]): Date;
 function head(value: any): any {
   return value[0];
 }
-
-function headCommon<Type>(arg: Type): Type {
+// => overloads vs generic
+function headCommon<T>(arg: T): T {
   return arg;
 }
 

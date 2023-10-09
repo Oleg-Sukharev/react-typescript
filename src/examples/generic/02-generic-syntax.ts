@@ -11,7 +11,7 @@ export function toArray<T>(...arg: T[]): T[] {
   return arg;
 }
 toArray<number>(1, 2, 3);
-toArray("ad", "asd");
+toArray("abc", "de");
 
 function head(value: string): string;
 function head(value: readonly []): undefined;
@@ -19,8 +19,6 @@ function head<T>(value: readonly T[]): T;
 function head(value: any): any {
   return value[0];
 }
-
-head(["12q", "asas"]);
 
 const head1 = <T>(value: T[]): T => value[0]!;
 
@@ -38,3 +36,7 @@ const obj2: ModelData<Array<number>> = {
   title: "12sad",
   value: [1234],
 };
+
+function testt<T>(values: T): T {
+  return values;
+}
