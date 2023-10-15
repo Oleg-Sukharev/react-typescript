@@ -5,13 +5,15 @@ function average(...nums: number[]) {
 }
 
 let str = "Hello World";
-type x = typeof str;
+type X = typeof str;
 
-type fn = typeof average;
+type FN = typeof average;
 
-const max: fn = (...numbers) => Math.max(...numbers);
+const max: FN = (...numbers) => Math.max(...numbers);
 max(1, 2, 3);
 
-type returnFn = ReturnType<typeof average>;
+type ReturnFN = ReturnType<typeof average>;
+// detect what function returns in our case it is Number
+// as average function return number line: 4
 
 export {};

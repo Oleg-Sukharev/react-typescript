@@ -10,9 +10,11 @@ interface DateRecord {
 }
 
 type MyRecord<T> = T extends string ? StringRecord : DateRecord;
+// like ternary operator T is string type we use the first type
 
 type Obj1 = MyRecord<string>;
 type Obj2 = MyRecord<number>;
+
 const o1: Obj1 = {
   r: "123",
 };
