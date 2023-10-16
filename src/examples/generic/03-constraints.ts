@@ -1,6 +1,10 @@
 export function len<T extends { length: number }>(arg: T): number {
   return arg.length;
 }
+// extends - detecting restrictions here
+// saying that T have to have  { length: number }
+
+const lenArrow = <T extends { length: number }>(arg: T): number => arg.length;
 
 len("abc");
 len(["abc"]);
