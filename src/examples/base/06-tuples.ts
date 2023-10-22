@@ -4,6 +4,8 @@ const pairs: [string, string][] = [
 ];
 
 const data: [number, boolean, string] = [1, true, "lodash"];
+type someTuple = [number, string, boolean, ...string[]];
+// can use spread operator for keeping optional values , but it should be one kind of type
 
 // csv
 const doc: [string, string, number, Date][] = [];
