@@ -1,7 +1,9 @@
+import { InputHTMLAttributes } from "react";
 import classes from "./InputField.module.scss";
 import { forwardRef } from "react";
 
-interface InputProps extends React.HTMLProps<HTMLInputElement> {
+interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+  // interface InputProps extends React.HTMLProps<HTMLInputElement> {
   label: string;
   error?: string;
   dirtyField?: boolean;

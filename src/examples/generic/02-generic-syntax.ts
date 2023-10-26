@@ -36,7 +36,3 @@ const obj2: ModelData<Array<number>> = {
   title: "12sad",
   value: [1234],
 };
-
-function testt<T>(values: T): T {
-  return values;
-}
