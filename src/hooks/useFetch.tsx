@@ -21,6 +21,7 @@ export function useFetch<T>(url: string, options: FetchOptions = {}): FetchResul
     setIsLoading(true);
 
     const controller = new AbortController();
+    // need to cancel the request if the component is unmounted
 
     fetch(url, { signal: controller.signal, ...options })
       .then((res) => {
