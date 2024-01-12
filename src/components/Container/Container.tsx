@@ -1,5 +1,5 @@
 import { PropsWithChildren } from "react";
-import { mergeClassesUtils } from "@/utils/mergeClassesUtils";
+import { mc } from "@/utils/mc";
 
 const Box = ({ children }: PropsWithChildren) => {
   return <section className="m-2 border border-black p-2">{children}</section>;
@@ -9,7 +9,7 @@ type BoxProps = { color?: "text-primary" | "text-secondary" };
 
 const BoxColor = ({ children, color = "text-primary" }: PropsWithChildren<BoxProps>) => {
   return (
-    <section className={mergeClassesUtils("m-2 border border-black p-2", color)}>
+    <section className={mc("m-2 border border-black p-2", color)}>
       Standard practice
       {children}
     </section>
@@ -17,7 +17,7 @@ const BoxColor = ({ children, color = "text-primary" }: PropsWithChildren<BoxPro
 };
 
 const BoxColorAlternative = ({ children, color = "text-primary" }: PropsWithChildren & BoxProps) => {
-  return <section className={mergeClassesUtils("m-2 border border-black p-2", color)}>{children}</section>;
+  return <section className={mc("m-2 border border-black p-2", color)}>{children}</section>;
 };
 
 export const Container = () => {

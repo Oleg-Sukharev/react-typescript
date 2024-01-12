@@ -1,6 +1,8 @@
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 
-export function mergeClassesUtils(...inputs: any[]) {
+const mc = (...inputs) => {
   return twMerge(clsx(inputs));
-}
+};
+
+export default mc;
