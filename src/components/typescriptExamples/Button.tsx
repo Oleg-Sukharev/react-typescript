@@ -2,7 +2,7 @@ import { ComponentPropsWithoutRef, PropsWithChildren } from "react";
 
 type ButtonProps = ComponentPropsWithoutRef<"button">;
 
-export const Button = ({ children, onClick, type }: ButtonProps) => {
+const Button = ({ children, onClick, type }: ButtonProps) => {
   return (
     <button onClick={onClick} type={type}>
       {children}
@@ -18,3 +18,5 @@ type ButtonPropsAlt = PropsWithChildren<{
 export const ButtonsAlt = ({ children, onClick }: ButtonPropsAlt) => {
   return <button onClick={onClick}>{children}</button>;
 };
+
+export default Button;

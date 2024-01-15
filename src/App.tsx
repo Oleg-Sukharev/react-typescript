@@ -1,9 +1,10 @@
-import { Container } from "@/components/Container/Container";
+import HookForm from "@/components/Forms/HookForm";
 function App() {
   return (
     <>
-      <div className="bg-black text-center text-white">Test</div>
-      <Container />
+      <main className="flex flex-auto flex-col pt-20">
+        <HookForm />
+      </main>
     </>
   );
 }
