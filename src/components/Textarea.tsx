@@ -11,7 +11,7 @@ export type TextareaProps = React.TextareaHTMLAttributes<HTMLTextAreaElement> & 
 const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
   ({ className, error, label, dirtyField, ...props }, ref) => {
     return (
-      <div className={className}>
+      <div className={mc("relative", className)}>
         <label htmlFor={label} className={mc("text-sm ", dirtyField && "text-blue-400")}>
           {label}
         </label>
@@ -24,7 +24,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
           ref={ref}
           {...props}
         />
-        {error && <span className="mt-2 text-sm text-red-600">{error}</span>}
+        {error && <span className="absolute left-0 top-[100%] mt-2 w-full text-sm text-red-600">{error}</span>}
       </div>
     );
   },

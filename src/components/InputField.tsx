@@ -24,7 +24,7 @@ const InputField = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
         {...restProps}
       />
 
-      {error && <span className="mt-2 text-sm text-red-600">{error}</span>}
+      {error && <span className="absolute left-0 top-[100%] mt-2 w-full text-sm text-red-600">{error}</span>}
     </div>
   );
 });
