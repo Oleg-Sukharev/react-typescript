@@ -7,7 +7,9 @@ import { Button } from "../Button";
 import CircularProgress from "../CircularProgress";
 import InputField from "../InputField";
 import * as yup from "yup";
+import RadioGroup from "../RadioGroup";
 
+const SUBJECT_OPTIONS = ["General 1", "General 2", "General 3", "General 4"];
 const EMAIL_REGEX =
   /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
@@ -20,6 +22,7 @@ const SCHEMA = yup.object().shape({
     .required("Email is required"),
   comments: yup.string().required("Comments are required"),
   country: yup.object().required("Country is required"),
+  subject: yup.string().required("Subject is required"),
 });
 
 interface CountryOptions {
@@ -37,6 +40,7 @@ interface FormValues {
   name: string;
   email: string;
   comments: string;
+  subject: string;
   country: CountryOptions;
 }
 
@@ -44,6 +48,7 @@ const defaultValues: FormValues = {
   name: "",
   email: "",
   comments: "",
+  subject: "",
   country: COUNTRY_OPTIONS[0],
 };
 
@@ -114,10 +119,7 @@ const HookForm = () => {
         />
 
         <div className="relative sm:col-span-2">
-          <label
-            htmlFor="country"
-            className="textPrimary block text-sm  font-semibold text-gray-900 first-letter:uppercase"
-          >
+          <label htmlFor="country" className="text-sm">
             Country
           </label>
           <ReactSelect
@@ -134,6 +136,14 @@ const HookForm = () => {
             <div className="absolute left-0 top-full w-full text-red-600">{errors.country?.message}</div>
           ) : null}
         </div>
+        <RadioGroup
+          {...register("subject")}
+          label="Select Subject?"
+          values={SUBJECT_OPTIONS}
+          error={errors.subject?.message}
+          className="sm:col-span-2"
+          dirtyField={dirtyFields.subject}
+        />
       </div>
 
       <div className="mt-8 flex justify-end">
