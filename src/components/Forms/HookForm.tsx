@@ -2,12 +2,12 @@ import { useState } from "react";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm, SubmitHandler } from "react-hook-form";
 import ReactSelect from "react-select";
-import Textarea from "../Textarea";
-import { Button } from "../Button";
-import CircularProgress from "../CircularProgress";
-import InputField from "../InputField";
+import Textarea from "../UI/Textarea";
+import { Button } from "../UI/Button";
+import CircularProgress from "../UI/CircularProgress";
+import InputField from "../UI/InputField";
 import * as yup from "yup";
-import RadioGroup from "../RadioGroup";
+import RadioGroup from "../UI/RadioGroup";
 
 const SUBJECT_OPTIONS = ["General 1", "General 2", "General 3", "General 4"];
 const EMAIL_REGEX =

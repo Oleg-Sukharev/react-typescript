@@ -4,6 +4,7 @@ import App from "./App";
 import "./index.css";
 
 const rootElement = document.getElementById("root") as HTMLElement;
+
 if (!rootElement) {
   throw new Error("Root element is not found!");
 }
