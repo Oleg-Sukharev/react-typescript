@@ -10,6 +10,6 @@ max(1, 2, 3);
 
 type ReturnFN = ReturnType<typeof average>;
 // detect what function returns in our case it is Number
-// as average function return number line: 4
+// as average function return number
 
 export {};

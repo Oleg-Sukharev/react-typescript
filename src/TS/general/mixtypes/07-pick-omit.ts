@@ -8,7 +8,7 @@ type BrandNames = Record<WellKnownBrands, string>;
 type BrandNamesOptional = Partial<BrandNames>; //make all properties optional
 
 const myBrands: BrandNamesOptional = {
-  apple: "sasd",
+  apple: "Air",
 };
 
 interface Todo {

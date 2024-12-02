@@ -1,3 +1,4 @@
+//overloads
 function head(value: string): string;
 function head(value: number[]): number;
 function head(value: string[]): string;

@@ -6,9 +6,11 @@ function fromPair(pair: [string, string]) {
   };
 }
 
-const myPair: FirstArg<typeof fromPair> = ["myKey", "myValue"];
 type FirstArg<T> = T extends (first: infer First, ...args: any[]) => any ? First : never;
+
+const myPair: FirstArg<typeof fromPair> = ["myKey", "myValue"];
 // infer detect passing type T and can refer to it
+// !!!
 
 fromPair(myPair);
 

@@ -7,7 +7,7 @@ export interface User {
   isOnline?: boolean;
 }
 
-// now user contain 4 fields
+// now user contain 3 fields
 const user: User = {
   email: "test@gmail.com",
   login: "Jhon",
