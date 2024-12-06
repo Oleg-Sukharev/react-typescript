@@ -1,5 +1,12 @@
+import { Theme } from "@radix-ui/themes";
+import "@radix-ui/themes/styles.css";
+
 const App = () => {
-  return <div></div>;
+  return (
+    <Theme appearance="dark">
+      <div></div>
+    </Theme>
+  );
 };
 
 export default App;
