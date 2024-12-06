@@ -1,4 +1,4 @@
-import { Button } from "@/components/UI/Button";
+import { Button } from "@radix-ui/themes";
 import { useState } from "react";
 
 // Strict Mode: re-render extra time,re-runs effects an extra time, and checks for deprecated APis

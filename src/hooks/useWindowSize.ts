@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useLayoutEffect, useState } from "react";
 
 type WindowSize = {
   width: number;
@@ -6,29 +6,38 @@ type WindowSize = {
 };
 
 export default function useWindowSize() {
-  const [windowSize, setWindowSize] = useState<WindowSize>({
+  const [size, setSize] = useState<WindowSize>({
     width: typeof window !== "undefined" ? window.innerWidth : 0,
     height: typeof window !== "undefined" ? window.innerHeight : 0,
   });
 
-  useEffect(() => {
+  useLayoutEffect(() => {
+    if (typeof window === "undefined") return;
+
     const resizeHandler = () => {
-      setWindowSize({
+      setSize({
         width: window.innerWidth,
         height: window.innerHeight,
       });
     };
 
-    if (typeof window !== "undefined") {
-      resizeHandler();
+    const debouncedResizeHandler = debounce(resizeHandler, 1000);
 
-      window.addEventListener("resize", resizeHandler);
+    window.addEventListener("resize", debouncedResizeHandler);
 
-      return () => {
-        window.removeEventListener("resize", resizeHandler);
-      };
-    }
+    return () => window.removeEventListener("resize", debouncedResizeHandler);
   }, []);
 
-  return windowSize;
+  return size;
+}
+
+function debounce<T extends (...args: any[]) => void>(func: T, delay: number): T {
+  let timeoutId: ReturnType<typeof setTimeout> | null = null;
+
+  return ((...args: Parameters<T>) => {
+    if (timeoutId) {
+      clearTimeout(timeoutId);
+    }
+    timeoutId = setTimeout(() => func(...args), delay);
+  }) as T;
 }

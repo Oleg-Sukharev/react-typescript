@@ -1,4 +1,4 @@
-import { Button } from "@/components/UI/Button";
+import { Button } from "@radix-ui/themes";
 import { useState, useEffect } from "react";
 
 const GREETINGS: string[] = ["Hello", "Hola"];
