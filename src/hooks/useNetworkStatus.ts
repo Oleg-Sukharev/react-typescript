@@ -2,7 +2,7 @@ import { useSyncExternalStore } from "react";
 
 const getSnapshot = () => navigator.onLine;
 
-const useNetworkStatus = (): boolean => {
+export default function useNetworkStatus(): boolean {
   const subscribe = (callback: () => void) => {
     window.addEventListener("online", callback);
     window.addEventListener("offline", callback);
@@ -14,6 +14,4 @@ const useNetworkStatus = (): boolean => {
   };
 
   return useSyncExternalStore(subscribe, getSnapshot);
-};
-
-export default useNetworkStatus;
+}
